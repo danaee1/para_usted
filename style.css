@@ -1,0 +1,559 @@
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fondo: #100d14;
+    --fondo-claro: #19131f;
+    --rosado: #f5a9cb;
+    --rosado-claro: #ffdaeb;
+    --blanco: #fff4fa;
+    --texto: #d8cbd8;
+}
+
+body {
+    background: var(--fondo);
+    color: var(--blanco);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 25px;
+}
+
+.subtitulo {
+    color: var(--rosado);
+    letter-spacing: 4px;
+    font-size: 11px;
+    margin-bottom: 18px;
+}
+
+
+/* NAVEGACIÓN */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    border-bottom: 1px solid #ffffff15;
+}
+
+.logo {
+    color: var(--rosado);
+    font-size: 38px;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--rosado);
+}
+
+
+/* PORTADA */
+
+.portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 30%,
+            #6e365d55,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            #33245088,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #100d14,
+            #211321,
+            #100d14
+        );
+}
+
+.contenido-portada {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.pequeno {
+    color: var(--rosado);
+    letter-spacing: 3px;
+    font-size: 11px;
+    margin-bottom: 25px;
+}
+
+.portada h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(65px, 10vw, 110px);
+    color: var(--rosado);
+    margin-bottom: 20px;
+}
+
+.portada h1 span {
+    font-size: 55px;
+}
+
+.descripcion {
+    max-width: 490px;
+    color: var(--texto);
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 35px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 14px 25px;
+    border: 1px solid var(--rosado);
+    border-radius: 30px;
+    background: var(--rosado);
+    color: #261321;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background: transparent;
+    color: var(--rosado);
+    transform: translateY(-3px);
+}
+
+.luna {
+    position: absolute;
+    right: 13%;
+    top: 23%;
+    color: var(--rosado-claro);
+    font-size: clamp(90px, 14vw, 160px);
+    text-shadow: 0 0 50px #f5a9cb55;
+}
+
+.estrella {
+    position: absolute;
+    color: var(--rosado);
+    animation: brillar 3s infinite alternate;
+}
+
+.estrella1 {
+    top: 23%;
+    right: 35%;
+    font-size: 30px;
+}
+
+.estrella2 {
+    top: 43%;
+    right: 8%;
+    font-size: 23px;
+}
+
+.estrella3 {
+    top: 68%;
+    right: 28%;
+    font-size: 20px;
+}
+
+.frase-portada {
+    position: absolute;
+    right: 8%;
+    bottom: 12%;
+    max-width: 250px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 26px;
+    color: var(--rosado-claro);
+    text-align: right;
+}
+
+
+/* SOBRE ÉL */
+
+.sobre-ti {
+    background: var(--fondo-claro);
+}
+
+.texto-seccion {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--texto);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 55px;
+}
+
+.tarjeta {
+    padding: 35px 25px;
+    background: #ffffff05;
+    border: 1px solid #f5a9cb20;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    border-color: var(--rosado);
+    background: #f5a9cb08;
+}
+
+.tarjeta span {
+    font-size: 35px;
+    color: var(--rosado);
+}
+
+.tarjeta h3 {
+    font-size: 17px;
+    margin: 20px 0 12px;
+}
+
+.tarjeta p {
+    color: var(--texto);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+/* MOMENTOS */
+
+.momentos {
+    background: var(--fondo);
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 900px;
+    margin: 50px auto 35px;
+}
+
+.recuerdo {
+    min-height: 240px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ffffff15;
+    border-radius: 12px;
+    transition: 0.4s;
+}
+
+.recuerdo:hover {
+    transform: rotate(-2deg) scale(1.03);
+}
+
+.recuerdo span {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.recuerdo p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    color: var(--rosado-claro);
+}
+
+.recuerdo1 {
+    background: linear-gradient(145deg, #3a263d, #17111d);
+}
+
+.recuerdo2 {
+    background: linear-gradient(145deg, #38213d, #21162a);
+}
+
+.recuerdo3 {
+    background: linear-gradient(145deg, #43243b, #1a1420);
+}
+
+
+/* CARTA */
+
+.carta {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #7c3e6540,
+            transparent 50%
+        ),
+        var(--fondo-claro);
+}
+
+.sobre {
+    font-size: 65px;
+    margin-bottom: 25px;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.introduccion {
+    color: var(--texto);
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.mensaje {
+    max-width: 650px;
+    margin: 40px auto 0;
+    padding: 45px;
+    text-align: left;
+    background: #fce7f0;
+    color: #382333;
+    border-radius: 5px;
+    box-shadow: 0 15px 60px #00000040;
+    line-height: 2;
+    animation: aparecer 0.7s ease;
+}
+
+.mensaje p {
+    margin-bottom: 18px;
+    font-size: 13px;
+}
+
+.mensaje .saludo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+    color: #a34c79;
+}
+
+.firma {
+    font-family: 'Dancing Script', cursive;
+    font-size: 23px !important;
+    text-align: right;
+    color: #a34c79;
+}
+
+.oculto {
+    display: none;
+}
+
+
+/* PIE DE PÁGINA */
+
+footer {
+    padding: 55px 20px;
+    text-align: center;
+    background: var(--fondo);
+}
+
+footer p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    color: var(--rosado-claro);
+}
+
+.corazon-final {
+    font-size: 40px;
+    color: var(--rosado);
+    margin: 20px;
+    animation: latir 1.5s infinite;
+}
+
+footer .final-pequeno {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    color: var(--texto);
+}
+
+
+/* CORAZONES FLOTANTES */
+
+.corazones {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.corazon-flotante {
+    position: absolute;
+    bottom: -30px;
+    color: var(--rosado);
+    animation: subir linear forwards;
+    opacity: 0;
+}
+
+
+/* ANIMACIONES */
+
+@keyframes brillar {
+    from {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes latir {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    section {
+        padding: 80px 6%;
+    }
+
+    .portada {
+        min-height: 100svh;
+    }
+
+    .luna {
+        top: 17%;
+        right: 8%;
+        opacity: 0.5;
+    }
+
+    .portada h1 {
+        font-size: 65px;
+    }
+
+    .descripcion {
+        font-size: 13px;
+    }
+
+    .frase-portada {
+        right: 6%;
+        bottom: 5%;
+        font-size: 22px;
+    }
+
+    .tarjetas,
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta {
+        padding: 30px 20px;
+    }
+
+    .recuerdo {
+        min-height: 180px;
+    }
+
+    .mensaje {
+        padding: 25px;
+    }
+
+    .mensaje p {
+        font-size: 12px;
+    }
+
+}
